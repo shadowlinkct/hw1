@@ -1,0 +1,203 @@
+body {
+    background-color: #ffffff;
+}
+
+.acchead {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    height: 15vh;
+    background:
+        linear-gradient(-45deg,
+            rgba(41, 39, 40, 255) 35%,
+            #222 35%,
+            #222 65%,
+            rgba(41, 39, 40, 255) 65%);
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.acchead h1 {
+    font-size: 4em;
+}
+
+.academy-link {
+    color: #c32d32;
+    font-size: 0.9em;
+    text-decoration: none;
+    font-size: 0.9em
+}
+
+.academy-link:hover {
+    text-decoration: underline;
+}
+
+.smalltabitem {
+    box-sizing: border-box;
+    margin: 1em;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 0.2em 0.4em rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    border-right: 1rem solid #c32d32;
+}
+
+.tabcontent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    width: 100%;
+}
+
+.imagetab img {
+    width: 30vh;
+    height: auto;
+    object-fit: cover;
+    margin-right: 2vw;
+}
+
+.tabtext {
+    flex: 1;
+}
+
+.tabtext span {
+    font-size: 1.2em;
+    color: rgb(0, 0, 0);
+}
+
+.tabtext h4 {
+    margin: 0.5em 0;
+    font-size: 1.9em;
+    color: #c32d32;
+}
+
+.tabtext p {
+    font-size: 1.3em;
+    color: #000000;
+}
+
+.bookmark-container {
+    margin-left: auto;
+}
+
+.bookmark {
+    width: 2.5vh;
+    height: auto;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.bookmark:hover {
+    transform: scale(1.1);
+}
+
+.tab-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin: auto;
+}
+
+.tab-container a {
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.tab {
+    padding: 15px 20px;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    transition: border-bottom 0.3s;
+    color: #bababa;
+}
+
+.tab.active {
+    border-top: 3px solid #e74c3c;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    ;
+    border-bottom: none;
+
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.contenitore-articoli,
+.contenitore-esercizi {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.iconImgClass {
+    margin-right: 3px;
+    height: auto;
+    width: 30px;
+  }
+@media (max-width: 1200px) {
+    .mediumtabitem {
+        flex: 1 1 calc(33.333% - 10px);
+    }
+
+    .smalltabitem {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+/* Stili responsive */
+@media (max-width: 768px) {
+    .tabcontent {
+        flex-direction: column;
+    }
+
+    .imagetab img {
+        border-bottom: none;
+    }
+
+    .tabtext {
+        padding: 15px;
+    }
+
+    .tabtext h4 {
+        font-size: 20px;
+    }
+
+    .tabtext p {
+        font-size: 14px;
+    }
+
+    .largetabitem,
+    .mediumtabitem,
+    .smalltabitem {
+        flex: 1 1 calc(100% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .tabtext {
+        padding: 10px;
+    }
+
+    .tabtext h4 {
+        font-size: 18px;
+    }
+
+    .tabtext p {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,133 @@
+body {
+    background-color: #f7f7f7;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 1em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    margin-top: 1.5vw;
+}
+
+.logincontainer {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 1em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    margin-top: 3vw;
+}
+.registration-form h1 {
+    text-align: center;
+    margin-bottom: 1.25em;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25em;
+    margin-bottom: 1.25em;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.3125em;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 0.3125em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #c6363b;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 0.9375em;
+    background-color: #0f834d;
+    color: #fff;
+    border: none;
+    border-radius: 0.3125em;
+    font-size: 1.125em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0a5532;
+}
+
+p {
+    text-align: center;
+    margin-top: 1.25em;
+    line-height: 1.5;
+}
+
+
+p a,
+label a {
+    line-height: 1.5;
+    color: #ff3030;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+.acchead {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    background: 
+    linear-gradient(
+        -45deg,
+        rgba(41, 39, 40, 255) 35%,
+        #222 35%,
+        #222 65%,
+        rgba(41, 39, 40, 255) 65%
+    );
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.acchead h1 {
+    font-size: 2.5em;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+    }
+    .container, .logincontainer{
+        padding: 0;
+    }
+}
