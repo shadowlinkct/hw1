@@ -503,6 +503,10 @@ div.centerlink a:hover {
     z-index: 9999;
     font-weight: bold;
   }
+  #active a{
+    color: #000;
+    text-decoration: none;
+  }
 
   #active div {
     display: block;

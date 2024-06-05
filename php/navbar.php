@@ -57,9 +57,9 @@
         </div>
     </div>
     <div id="active" class="hidden">
-        <div><a>BLOG</a></div>
-        <div><a>LIBRI</a></div>
-        <div><a>RIVISTA</a></div>
+        <div><a href="../php/exerciseApi.php">ESERCIZI</a></div>
+        <div><a href="../php/sportMusic.php">LE NOSTRE PLAYLIST</a></div>
+        <div><a href="../php/preferiti.php">PREFERITI</a></div>
         <div><a>VIDEOCORSI</a></div>
         <div><a>FORMAZIONI</a></div>
         <div><a>PERSONAL TRAINER</a></div>
