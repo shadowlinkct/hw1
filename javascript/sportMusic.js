@@ -9,55 +9,37 @@ async function onResponse(url, options) {
 }
 
 async function ottieniToken() {
-    const dati = await onResponse('https://accounts.spotify.com/api/token', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Basic ' + btoa(ClientID + ':' + secretKey)
-        },
-        body: 'grant_type=client_credentials'
-    });
-
-    return dati.access_token;
+    const response = await fetch('get_token.php');
+    const data = await response.json();
+    return data.access_token;
 }
 
 async function ottieniGeneri(token) {
-    const dati = await onResponse(`https://api.spotify.com/v1/browse/categories`, {
-        method: 'GET',
-        headers: { 'Authorization': 'Bearer ' + token }
-    });
-
-    return dati.categories.items;
+    const response = await fetch(`get_categories.php?token=${token}`);
+    const data = await response.json();
+    return data.categories.items;
 }
 
 async function ottieniPlaylistPerGenere(token, idGenere) {
-    const limite = 10;
-    const dati = await onResponse('https://api.spotify.com/v1/browse/categories/' + idGenere + '/playlists?limit=' + limite, {
-        method: 'GET',
-        headers: { 'Authorization': 'Bearer ' + token }
-    });
-
-    return dati.playlists.items;
+    const response = await fetch(`get_playlists.php?token=${token}&idGenere=${idGenere}`);
+    const data = await response.json();
+    return data.playlists.items;
 }
+
 
 async function ottieniBrani(token, endPointBrani) {
-    const limite = 10;
-    const dati = await onResponse(endPointBrani + '?limit=' + limite, {
-        method: 'GET',
-        headers: { 'Authorization': 'Bearer ' + token }
-    });
-
-    return dati.items;
+    const response = await fetch(`get_tracks.php?token=${token}&endpoint=${encodeURIComponent(endPointBrani)}`);
+    const data = await response.json();
+    return data.items;
 }
+
 
 async function ottieniBrano(token, endPointBrano) {
-    const dati = await onResponse(endPointBrano, {
-        method: 'GET',
-        headers: { 'Authorization': 'Bearer ' + token }
-    });
-
-    return dati;
+    const response = await fetch(`get_tracks.php?token=${token}&endpoint=${encodeURIComponent(endPointBrano)}`);
+    const data = await response.json();
+    return data;
 }
+
 
 // Modulo UI
 var elementiDOM = {
@@ -93,16 +75,13 @@ function creaPlaylist(testo, valore) {
 function creaBrano(id, nome) {
     const divListaCanzoni = document.querySelector(elementiDOM.divListaCanzoni);
 
-    // Crea l'elemento 'a'
     const aElement = document.createElement('a');
     aElement.href = "#";
     aElement.id = id;
     aElement.textContent = nome;
 
-    // Crea l'elemento 'br'
     const brElement = document.createElement('br');
 
-    // Aggiungi l'elemento 'a' e 'br' a divListaCanzoni
     divListaCanzoni.appendChild(aElement);
     divListaCanzoni.appendChild(brElement);
 }
@@ -113,17 +92,14 @@ function creaDettaglioBrano(img, titolo, artista) {
     const divDettaglio = document.querySelector(elementiDOM.divDettaglioCanzone);
     divDettaglio.textContent = '';
 
-    // Crea l'elemento img
     const imgElement = document.createElement('img');
     imgElement.src = img;
     divDettaglio.appendChild(imgElement);
 
-    // Crea l'elemento per il titolo
     const titoloElement = document.createElement('p');
     titoloElement.textContent = "Titolo: " + titolo;
     divDettaglio.appendChild(titoloElement);
 
-    // Crea l'elemento per l'artista
     const artistaElement = document.createElement('p');
     artistaElement.textContent = "Artista: " + artista;
     divDettaglio.appendChild(artistaElement);

@@ -17,7 +17,6 @@ function mostraArticoli(articoli) {
         creaArticolo(articoli[i], contenitore);
     }
 
-    // Controlla i preferiti
     fetch('myApi.php?preferiti=true')
         .then(response => response.json())
         .then(preferiti => {
@@ -30,7 +29,6 @@ function mostraArticoli(articoli) {
         })
         .catch(error => console.error('Errore nel caricamento dei preferiti:', error));
 
-    // Aggiungi l'evento di clic ai segnalibri
     aggiungiEventiSegnalibro();
 }
 
@@ -69,7 +67,7 @@ function creaArticolo(articolo, contenitore) {
     articoloTextDiv.appendChild(dataSpan);
 
     const link = document.createElement('a');
-    link.textContent = articolo.categoria || 'Link'; // Usa la categoria per il testo del link
+    link.textContent = articolo.categoria || 'Link';
     link.setAttribute('href', articolo.link);
     link.classList.add('academy-link');
     dataSpan.appendChild(link);
@@ -88,7 +86,7 @@ function creaArticolo(articolo, contenitore) {
     immagineSegnalibro.id = 'bookmark' + articolo.id;
     immagineSegnalibro.classList.add('bookmark');
     immagineSegnalibro.setAttribute('src', '../img/bookmarkno.png');
-    immagineSegnalibro.dataset.articoloId = articolo.id; // Aggiunta dell'ID dell'articolo come dato
+    immagineSegnalibro.dataset.articoloId = articolo.id;
     contenitoreSegnalibro.appendChild(immagineSegnalibro);
 
     descrizioneP.appendChild(contenitoreSegnalibro);
@@ -131,17 +129,17 @@ async function salvaPreferito(articoloId) {
             body: JSON.stringify({ id_articolo: articoloId })
         });
 
-        if (response.status === 401) { // Aggiunto il controllo dello stato della risposta
+        if (response.status === 401) {
             alert('Devi effettuare l\'accesso per salvare un preferito');
-            return false; // Aggiunto per indicare che l'operazione non è andata a buon fine
+            return false;
         }
 
         const data = await response.json();
         console.log(data);
-        return true; // Aggiunto per indicare che l'operazione è andata a buon fine
+        return true;
     } catch (error) {
         console.error('Errore nel salvataggio del preferito:', error);
-        return false; // Aggiunto per indicare che l'operazione non è andata a buon fine
+        return false;
     }
 }
 
@@ -155,17 +153,17 @@ async function rimuoviPreferito(articoloId) {
             body: JSON.stringify({ id_articolo: articoloId })
         });
 
-        if (response.status === 401) { // Aggiunto il controllo dello stato della risposta
+        if (response.status === 401) { 
             alert('Devi effettuare l\'accesso per rimuovere un preferito');
-            return false; // Aggiunto per indicare che l'operazione non è andata a buon fine
+            return false;
         }
 
         const data = await response.json();
         console.log(data);
-        return true; // Aggiunto per indicare che l'operazione è andata a buon fine
+        return true;
     } catch (error) {
         console.error('Errore nella rimozione del preferito:', error);
-        return false; // Aggiunto per indicare che l'operazione non è andata a buon fine
+        return false;
     }
 }
 

@@ -103,6 +103,7 @@ body {
     justify-content: center;
     margin-bottom: 20px;
     margin: auto;
+    margin-top: 2.5vh;
 }
 
 .tab-container a {

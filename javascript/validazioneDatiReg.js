@@ -1,10 +1,8 @@
-// Funzione per validare il formato dell'email
 function validaFormatoEmail(email) {
     let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regexEmail.test(email);
 }
 
-// Funzione per controllare se l'email è in uso
 function controllaEmailInUso(email, callback) {
     fetch('../php/registrazione.php?email=' + encodeURIComponent(email))
     .then(function(response) {
@@ -18,7 +16,6 @@ function controllaEmailInUso(email, callback) {
     });
 }
 
-// Funzione per validare la password
 function validaPassword(password, confermaPassword) {
     let lunghezzaMinima = 8;
     let contieneMaiuscola = /[A-Z]/.test(password);
@@ -38,7 +35,6 @@ function validaPassword(password, confermaPassword) {
     return true;
 }
 
-// Funzione principale per inizializzare il tutto
 function inizializzaValidazioneForm() {
     let campoEmail = document.getElementById("email");
     let campoPassword = document.getElementById("password");
@@ -46,7 +42,6 @@ function inizializzaValidazioneForm() {
     let bottoneInvia = document.querySelector("button[type='submit']");
     let emailInUso = false;
 
-    // Event listener per la verifica dell'email quando si perde il focus
     campoEmail.addEventListener("blur", function() {
         let email = campoEmail.value;
         if (!validaFormatoEmail(email)) {
@@ -61,7 +56,6 @@ function inizializzaValidazioneForm() {
         });
     });
 
-    // Event listener per la verifica prima dell'invio del form
     bottoneInvia.addEventListener("click", function(event) {
         let password = campoPassword.value;
         let confermaPassword = campoConfermaPassword.value;
@@ -72,5 +66,4 @@ function inizializzaValidazioneForm() {
     });
 }
 
-// Aggiunta dell'evento DOMContentLoaded per inizializzare il form
 document.addEventListener("DOMContentLoaded", inizializzaValidazioneForm);

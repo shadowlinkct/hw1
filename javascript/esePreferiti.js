@@ -22,7 +22,6 @@ async function mostraEsePreferiti() {
 
 function mostraErrore(error) {
     console.error('Si è verificato un errore:', error);
-    // Aggiungi qui la logica per mostrare l'errore all'utente, ad esempio tramite un messaggio di errore nel DOM
 }
 
 function mostraEsercizi(esercizi) {
@@ -115,5 +114,4 @@ tabs.forEach(tab => {
     });
 });
 
-// Carica gli esercizi preferiti al caricamento della pagina
 caricaEse().catch(error => console.error('Errore durante il caricamento degli esercizi:', error));
