@@ -1,9 +1,26 @@
 body {
-    background-color: rgba(6, 11, 16, 255);
+    background-color: #121212;
     color: #000000;
     margin: 0;
 }
-
+.acchead {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    height: 15vh;
+    background:
+        linear-gradient(-45deg,
+            rgba(41, 39, 40, 255) 35%,
+            #222 35%,
+            #222 65%,
+            rgba(41, 39, 40, 255) 65%);
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+.acchead h1 {
+    font-size: 4em;
+}
 .spotyimg {
     width: 50%;
     display: flex;
@@ -37,19 +54,21 @@ button {
     width: 100%;
     height: 35px;
     border: none;
-    border-radius: 5px;
+    border-radius: 105px;
     padding: 5px;
+    transition: background-color 0.5s;
 }
 
 button {
-    background-color: #b91d1d;
+    background-color: #0f834d;
     color: white;
     cursor: pointer;
     width: 50%;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #5f1515;
+    background-color: #0c5c36;
 }
 
 .song-list {
@@ -58,4 +77,8 @@ button:hover {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
+}
+.imgElement{
+    width: 100%;
+    height: auto;
 }

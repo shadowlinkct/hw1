@@ -20,17 +20,21 @@ if (!array_key_exists('id', $_SESSION)) {
 </head>
 
 <body>
-    <?php
+<?php
     require_once 'navbar.php';
     ?>
+        <div class="acchead">
+        <h1>SPOTIFY COLLAB</h1>
+
+    </div>
     <div class="spotydivprincipale">
-        <h1 class="spotydiv">Training Music</h1>
+        <h1 class="spotydiv">ALLENATI CON LE NOSTRE HIT</h1>
         <div class="spotydiv">
             <label>Playlist:
                 <select id="select_playlist"></select>
             </label>
         </div>
-        <button id="btn_submit">Submit</button>
+        <button id="btn_submit">CERCA</button>
         <div class="song-list" id="song-list"></div>
         <div id="song-detail"></div>
         <input type="hidden" id="hidden_token">
