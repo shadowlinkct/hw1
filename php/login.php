@@ -4,7 +4,7 @@ session_start();
 require_once "dbconnection.php";
 $error = "";
 if (array_key_exists('id', $_SESSION)) {
-    header("Location: indexs.php");
+    header("Location: index.php");
 }
 if (array_key_exists("submit", $_POST)) {
 
@@ -43,12 +43,12 @@ if (array_key_exists("submit", $_POST)) {
             if (password_verify($userPassword, $hashedPassword)) {
                 $_SESSION['id'] = $row['id'];
                 setcookie("id", $row['id'], time() + 3600);
-                if (isset($_POST['indexs']) && $_POST['indexs'] == '1') { /* Rimani connesso */
+                if (isset($_POST['index']) && $_POST['index'] == '1') { /* Rimani connesso */
 
                     setcookie("id", $row['id'], time() + 3600);
                 }
                 echo "Accesso avvenuto!!";
-                header("Location: indexs.php");
+                header("Location: index.php");
                 // }
             }else{
                 $error = "<p>La password non corrisponde, Riprova!</p>" . $error;

@@ -4,7 +4,7 @@ session_start();
 require_once "dbconnection.php";
 $error = "";
 if (array_key_exists('id', $_SESSION)) {
-    header("Location: indexs.php");
+    header("Location: index.php");
 }
 if (array_key_exists("submit", $_POST)) {
 
@@ -34,7 +34,7 @@ if (array_key_exists("submit", $_POST)) {
                 $_SESSION['id'] =  $id;
                 setcookie("id", $_SESSION['id'], time() + 3600);
                 echo "Accesso avvenuto!!";
-                header("Location: indexs.php");
+                header("Location: index.php");
             }
         }
     }

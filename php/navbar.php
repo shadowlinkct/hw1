@@ -33,7 +33,7 @@
     </div>
     <div class="logonav">
         <div id="logodiv">
-            <a href="indexs.php"><img src="../img/logo.png" alt="Descrizione dell'immagine"></a>
+            <a href="index.php"><img src="../img/logo.png" alt="Descrizione dell'immagine"></a>
         </div>
         <div class="centerlink">
             <div class="centerlink-item" id="blog"><a>BLOG</a><img src="../img/forward-arrow.png" /></div>
