@@ -19,10 +19,8 @@ async function search(event) {
 		console.log('Eseguo ricerca elementi riguardanti: ' + text);
 
 		try {
-			// Ottieni tutti i dati degli esercizi
 			const allExercises = await fetchAllExerciseBaseData();
 
-			// Filtra gli esercizi in base al nome
 			let filteredExercises = [];
 			for (let i = 0; i < allExercises.length; i++) {
 				if (esercizioFiltrato(allExercises[i], text)) {
@@ -30,7 +28,6 @@ async function search(event) {
 				}
 			}
 
-			// Processa i dati degli esercizi filtrati
 			processExerciseData(filteredExercises);
 		} catch (error) {
 			onError(error);
@@ -159,6 +156,6 @@ function onError(error) {
 	console.log('There was a problem with the fetch operation: ' + error.message);
 }
 
-// Aggiungo event listener al form1 per la RICERCA
+
 const form = document.querySelector('#search_content');
 form.addEventListener('submit', search)

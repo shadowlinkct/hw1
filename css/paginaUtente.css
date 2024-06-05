@@ -136,8 +136,6 @@ button {
 button:hover {
     background-color: #0c5c36;
 }
-
-/* CSS per dispositivi con schermo di larghezza superiore a 600px */
 @media (max-width: 600px) {
     .container {
         justify-content: space-between;

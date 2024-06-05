@@ -29,7 +29,6 @@ function showSlides(n) {
     dots[slideIndex - 1].classList.add("actives");
 }
 
-// Aggiunta dell'evento click ai punti delle slide
 for (let i = 1; i <= 3; i++) {
     let slideNumber = i <= 3 ? i : i - 3;
     function callbackFunction() {
