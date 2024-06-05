@@ -12,7 +12,6 @@ function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
-// Funzione per mostrare le slide
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
@@ -37,7 +36,6 @@ for (let i = 1; i <= 3; i++) {
     document.querySelector("#dot" + i).addEventListener("click", callbackFunction);
 }
 
-// Funzioni per passare alla slide precedente o successiva
 function prevSlide() {
     plusSlides(-1);
 }
@@ -49,10 +47,10 @@ document.querySelector('.prev').addEventListener('click', prevSlide);
 document.querySelector('.next').addEventListener('click', nextSlide);
 
 function scrollToOtherDiv() {
-    // Ottieni l'elemento da mostrare
+  
     let otherDiv = document.querySelector('.slideshow-div');
 
-    // Scorri fino all'elemento
+   
     otherDiv.scrollIntoView();
 }
 
