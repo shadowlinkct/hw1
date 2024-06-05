@@ -1,5 +1,4 @@
 <?php
-// get_token.php
 
 $clientID = 'ab44cf466d404c1194e90a7b7cd56e2f';
 $secretKey = 'c9fe4d2f6b8d433e8f25294f86b26c2c';

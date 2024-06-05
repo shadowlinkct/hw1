@@ -12,7 +12,7 @@ switch ($metodoRichiesta) {
             if (isset($_SESSION["id"])) {
                 gestisciGetPreferitiEsercizi();
             } else {
-                http_response_code(401); // Aggiungi questa riga
+                http_response_code(401); 
                 echo json_encode(["errore" => "Utente non loggato"]);
             }
         } else {
@@ -22,7 +22,7 @@ switch ($metodoRichiesta) {
     case 'POST':
     case 'DELETE':
         if (!isset($_SESSION["id"])) {
-            http_response_code(401); // Aggiungi questa riga
+            http_response_code(401); 
             echo json_encode(["errore" => "Utente non loggato"]);
             exit;
         }
@@ -72,12 +72,12 @@ function gestisciPost()
         $description = mysqli_real_escape_string($conn, $input['description']);
         $image = mysqli_real_escape_string($conn, $input['image']);
     
-        // Inserisci l'esercizio nella tabella articoli
+       
         $sql_esercizio = "INSERT INTO esercizi (nome, immagine, descrizione) VALUES ('$name', '$image', '$description')";
         if (mysqli_query($conn, $sql_esercizio)) {
             $id_esercizio= mysqli_insert_id($conn);
             error_log("id_esercizio: " . $id_esercizio);
-            // Inserisci l'articolo nei preferiti
+         
             $sql_preferiti = "INSERT INTO esercizipreferiti (id_utente, id_esercizio) VALUES ('$id_utente', '$id_esercizio')";
             if (mysqli_query($conn, $sql_preferiti)) {
                 echo json_encode(["messaggio" => "Esercizio aggiunto ai preferiti"]);

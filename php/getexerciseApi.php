@@ -1,5 +1,5 @@
 <?php
-// Configurazione API
+
 define('API_URL', 'https://wger.de/api/v2/');
 define('TOKEN', '62e95f2d76b4aefd161d1f16cd487a5bb3ad3db0');
 

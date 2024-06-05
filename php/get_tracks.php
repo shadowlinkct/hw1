@@ -1,5 +1,4 @@
 <?php
-// get_tracks.php
 
 $token = $_GET['token'];
 $endpoint = $_GET['endpoint'];

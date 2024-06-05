@@ -12,7 +12,7 @@ switch ($metodoRichiesta) {
             if (isset($_SESSION["id"])) {
                 gestisciGetPreferiti();
             } else {
-                http_response_code(401); // Aggiungi questa riga
+                http_response_code(401); 
                 echo json_encode(["errore" => "Utente non loggato"]);
             }
         } else {
@@ -22,7 +22,7 @@ switch ($metodoRichiesta) {
     case 'POST':
     case 'DELETE':
         if (!isset($_SESSION["id"])) {
-            http_response_code(401); // Aggiungi questa riga
+            http_response_code(401); 
             echo json_encode(["errore" => "Utente non loggato"]);
             exit;
         }
